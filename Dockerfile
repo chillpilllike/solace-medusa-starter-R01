@@ -10,7 +10,7 @@ COPY . .
 
 RUN corepack enable && corepack prepare yarn@stable --activate
 
-RUN yarn global add @medusajs/icons
+RUN yarn global add @medusajs/medusa-cli @medusajs/icons
 
 # Install dependencies based on the preferred package manager
 
