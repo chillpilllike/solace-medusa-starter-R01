@@ -27,6 +27,7 @@
     "@medusajs/js-sdk": "2.0.0",
     "@medusajs/types": "2.0.0",
     "@medusajs/ui": "2.0.0",
+    "@medusajs/icons": "2.0.4",
     "@meilisearch/instant-meilisearch": "^0.7.1",
     "@next/mdx": "^14.2.14",
     "@paypal/paypal-js": "^5.0.6",
