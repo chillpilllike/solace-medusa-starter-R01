@@ -8,9 +8,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN corepack enable && corepack prepare yarn@stable --activate
-
-RUN yarn global add @medusajs/medusa-cli @medusajs/icons
+# Ensure Corepack is enabled and the package manager is initialized
+RUN corepack enable && corepack prepare yarn@stable --activate && \
+    yarn global add @medusajs/medusa-cli @medusajs/icons
 
 # Install dependencies based on the preferred package manager
 
