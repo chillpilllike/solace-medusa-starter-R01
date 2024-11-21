@@ -9,8 +9,7 @@ WORKDIR /app
 COPY . .
 
 # Ensure Corepack is enabled and the package manager is initialized
-RUN corepack enable && corepack prepare yarn@stable --activate && \
-    yarn global add @medusajs/medusa-cli @medusajs/icons
+RUN corepack enable && corepack prepare yarn@stable --activate
 
 # Install dependencies based on the preferred package manager
 
@@ -20,11 +19,11 @@ RUN corepack enable && corepack prepare yarn@stable --activate && \
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
-
+COPY . . 
 
 RUN yarn install
 
-COPY . . 
+
 RUN yarn build
 
 # If using npm comment out above and use below instead
