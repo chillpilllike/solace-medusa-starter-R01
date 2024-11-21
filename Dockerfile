@@ -7,8 +7,9 @@ WORKDIR /app
 
 COPY . .
 
-# Ensure Corepack is enabled and the package manager is initialized
 RUN corepack enable && corepack prepare yarn@stable --activate
+
+RUN yarn add sharp
 
 # Install dependencies based on the preferred package manager
 
@@ -16,16 +17,26 @@ RUN corepack enable && corepack prepare yarn@stable --activate
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 
-RUN rm -rf .yarn/cache
-RUN yarn install
+ENV NEXT_TELEMETRY_DISABLED 1
 
+
+
+RUN yarn
 RUN yarn build
 
 # If using npm comment out above and use below instead
 # RUN npm run build
 
+ENV NODE_ENV production
+# Uncomment the following line in case you want to disable telemetry during runtime.
+
+ENV NEXT_TELEMETRY_DISABLED 1
+
+
+
 EXPOSE 8000
 
+ENV PORT 8000
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 CMD ["yarn", "start"]
