@@ -10,8 +10,6 @@ COPY . .
 
 RUN corepack enable && corepack prepare yarn@stable --activate
 
-RUN yarn add @medusajs/icons
-
 # Install dependencies based on the preferred package manager
 
 # Next.js collects completely anonymous telemetry data about general usage.
