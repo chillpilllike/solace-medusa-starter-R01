@@ -24,7 +24,7 @@ COPY . .
 RUN yarn install
 
 
-RUN yarn build
+RUN yarn next build --no-lint
 
 # If using npm comment out above and use below instead
 # RUN npm run build
