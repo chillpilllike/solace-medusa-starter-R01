@@ -20,11 +20,11 @@ RUN corepack enable && corepack prepare yarn@stable --activate
 ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN yarn install
-RUN yarn build
+# RUN yarn build
 
 EXPOSE 8000
 
 ENV PORT 8000
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
