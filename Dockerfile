@@ -13,7 +13,7 @@ RUN corepack enable && corepack prepare yarn@stable --activate
 # Uncomment the following line in case you want to disable telemetry during the build.
 
 RUN yarn install
-# RUN yarn build
+RUN yarn build
 
 EXPOSE 8000
 
