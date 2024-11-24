@@ -11,8 +11,6 @@ COPY . .
 
 RUN corepack enable && corepack prepare yarn@stable --activate
 
-RUN yarn add sharp
-
 # Install dependencies based on the preferred package manager
 
 # Next.js collects completely anonymous telemetry data about general usage.
@@ -21,20 +19,8 @@ RUN yarn add sharp
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
-
-
-RUN yarn
+RUN yarn install
 RUN yarn build
-
-# If using npm comment out above and use below instead
-# RUN npm run build
-
-ENV NODE_ENV production
-# Uncomment the following line in case you want to disable telemetry during runtime.
-
-ENV NEXT_TELEMETRY_DISABLED 1
-
-
 
 EXPOSE 8000
 
