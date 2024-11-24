@@ -17,8 +17,6 @@ RUN corepack enable && corepack prepare yarn@stable --activate
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 
-ENV NEXT_TELEMETRY_DISABLED 1
-
 RUN yarn install
 # RUN yarn build
 
