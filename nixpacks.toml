@@ -1,0 +1,23 @@
+[setup]
+runtime = "nodejs_20"
+
+[install]
+commands = [
+  "npm install -g corepack@0.24.1 && corepack enable",
+  "npm i"
+]
+
+[build]
+commands = [
+  "npm run build"
+]
+
+[start]
+commands = [
+  "npm run start"
+]
+
+[clone]
+commands = [
+  "git clone https://github.com/rigby-sh/solace-medusa-starter.git"
+]
